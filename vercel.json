@@ -1,7 +1,7 @@
 {
   "version": 2,
   "public": true,
-  "outputDirectory": "dist/Storageshare",
+  "outputDirectory": "dist/Storageshare/browser",
   "rewrites": [
     {
       "source": "/(.*)",
