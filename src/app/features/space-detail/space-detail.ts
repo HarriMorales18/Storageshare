@@ -30,6 +30,7 @@ export class SpaceDetail implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.space = this.spaceService.getSpaceById(id);
+    window.scrollTo(0, 0);
   }
 
   startReservation() {
@@ -60,4 +61,6 @@ export class SpaceDetail implements OnInit {
     this.startDate = '';
     this.endDate = '';
   }
+
+  
 }

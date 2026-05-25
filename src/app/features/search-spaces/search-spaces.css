@@ -149,19 +149,104 @@
   padding: 40px; 
 }
 
-/* === RESPONSIVE (Para que no se rompa en pantallas más pequeñas) === */
-@media (max-width: 1200px) {
-  .spaces-grid { grid-template-columns: repeat(4, 1fr); }
-}
+/* ==========================================================================
+   CONFIGURACIÓN RESPONSIVE AVANZADA - COMPONENTE DE BÚSQUEDA
+   ========================================================================== */
 
-@media (max-width: 992px) {
-  .spaces-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
+/* --- 1. TABLETS Y PANTALLAS MEDIANAS (Menos de 768px) --- */
 @media (max-width: 768px) {
-  .spaces-grid { grid-template-columns: repeat(2, 1fr); }
+  .search-page { 
+    padding: 30px 15px; /* Reducimos el padding superior para no desperdiciar pantalla */
+  }
+
+  .page-title { 
+    font-size: 2rem; /* El título baja un poco de escala para que no ocupe tanto espacio */
+    margin-bottom: 25px;
+  }
+
+  .search-bar {
+    margin: 0 auto 35px auto; /* Reducimos el margen inferior del buscador */
+    padding: 0 10px;
+  }
 }
 
+/* --- 2. CELULARES Y DISPOSITIVOS MÓVILES (Menos de 480px) --- */
 @media (max-width: 480px) {
-  .spaces-grid { grid-template-columns: 1fr; }
+  .page-title { 
+    font-size: 1.6rem; /* Ideal para la pantalla de cualquier smartphone */
+    line-height: 1.3;
+  }
+
+  /* El contenedor del buscador pasa de fila a columna */
+  .search-bar {
+    flex-direction: column; 
+    gap: 12px; /* Espaciado vertical entre el input y el botón */
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 14px 15px; /* Ajustamos ligeramente el colchón interno */
+    box-sizing: border-box; /* Evita que el padding extra ensanche el input hacia los lados */
+    font-size: 0.95rem; /* Cómodo para escribir en pantallas táctiles */
+  }
+
+  /* El botón de buscar se estira para que sea fácil presionarlo */
+  .search-bar .btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  /* Ajustes en la tarjeta para la vista móvil en una sola columna vertical */
+  .spaces-grid { 
+    grid-template-columns: 1fr; /* Una tarjeta por fila */
+    gap: 20px;
+  }
+
+  .space-card {
+    max-width: 100%;
+  }
+
+  .space-img { 
+    height: 180px; /* Le damos un poquito más de altura a la foto en celular para que luzca el espacio */
+  }
+
+  /* Ajustamos el título interno de la tarjeta para que no se oculte tanto con los puntos suspensivos */
+  .space-header-info h4 { 
+    max-width: 75%; /* Le cedemos un toque más de espacio al texto */
+    white-space: normal; /* Permitimos que baje a dos líneas si el título es muy largo en móviles */
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 1.05rem;
+  }
+  
+  .rating {
+    font-size: 0.9rem; /* Agranda ligeramente la estrella para que sea legible */
+  }
+
+  /* Mejoramos la distribución del precio y el botón de reservar abajo */
+  .space-footer {
+    flex-direction: row; /* ¡Cambio estratégico! En fila aprovecha mejor el ancho completo del celular */
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .space-price {
+    font-size: 1.15rem;
+  }
+
+  .btn-book {
+    width: auto; /* Ya no tiene que ocupar todo el ancho porque está al lado del precio */
+    padding: 10px 24px; /* Un botón estilizado y ancho a la derecha */
+  }
+  
+  .no-results {
+    font-size: 1rem;
+    padding: 20px;
+  }
 }

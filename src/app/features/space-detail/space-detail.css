@@ -145,3 +145,117 @@ button:disabled {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   CONFIGURACIÓN RESPONSIVE - DETALLE DEL ESPACIO Y SIMULADOR DE RESERVAS
+   ========================================================================== */
+
+/* --- 1. TABLETS Y PANTALLAS MEDIANAS (Menos de 992px) --- */
+@media (max-width: 992px) {
+  .detail-page {
+    padding: 20px 15px; /* Colchón más pequeño en los bordes para ganar espacio */
+  }
+
+  /* La cuadrícula de dos columnas pasa a una sola fila vertical */
+  .detail-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 30px; /* Reducimos la separación para que fluya mejor */
+  }
+
+  /* Reducimos la altura de la imagen en tablet para que no consuma todo el espacio vertical */
+  .detail-image {
+    height: 380px;
+    border-radius: 16px; /* Bordes un toque más sutiles en pantallas pequeñas */
+  }
+}
+
+/* --- 2. CELULARES Y DISPOSITIVOS MÓVILES (Menos de 576px) --- */
+@media (max-width: 576px) {
+  .back-link {
+    margin-bottom: 15px; /* Más cerca del contenido principal */
+  }
+
+  /* Adaptamos la altura de la imagen para pantallas de celulares */
+  .detail-image {
+    height: 250px; /* Altura perfecta de previsualización tipo Airbnb */
+  }
+
+  /* El encabezado (Título + Calificación) cambia a columna si el texto es muy largo */
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start; /* Alinea todo a la izquierda */
+    gap: 10px;
+  }
+
+  .detail-header h2 {
+    font-size: 1.8rem; /* Reducimos el tamaño de la fuente para que no rompa la pantalla */
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .rating {
+    font-size: 1rem; /* Ajuste sutil de la estrella de calificación */
+    padding: 6px 12px;
+  }
+
+  .detail-location {
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  /* La cuadrícula de características (Tamaño, Acceso, Seguridad) pasa de 3 a 1 columna */
+  .detail-features {
+    grid-template-columns: 1fr; /* Una característica por fila */
+    gap: 12px;
+    padding: 15px; /* Agrega respiro interno */
+  }
+
+  .feature {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--light-blue); /* Una línea sutil divisoria */
+  }
+  
+  .feature:last-child {
+    border-bottom: none; /* Quitamos la línea al último elemento */
+  }
+
+  /* Caja del simulador de reservas */
+  .reservation-card {
+    padding: 20px; /* Colchón interno más cómodo */
+  }
+
+  .price-box {
+    flex-direction: column; /* Apila el precio y la frase "por mes" si es necesario */
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .price-box h3 {
+    font-size: 1.8rem; /* Precio grande y legible */
+  }
+
+  /* Los campos de fecha (Fecha de entrada / Fecha de salida) */
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  .date-input {
+    padding: 12px; /* Más cómodo de presionar en pantallas táctiles */
+    font-size: 1rem;
+  }
+
+  /* Forzamos a que los botones del formulario ocupen el 100% real de ancho */
+  .reservation-card button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+  
+  /* Mensaje de éxito al reservar */
+  .success-message h4 {
+    font-size: 1.3rem;
+  }
+  
+  .success-message p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,42 +1,57 @@
+/* ==========================================
+   1. ESTILOS BASE (Para pantallas grandes / PC)
+   ========================================== */
 .footer {
-  background-color: var(--light-blue);
-  color: var(--dark-blue);
-  padding: 60px 0 20px;
-  border-top: 5px solid var(--primary-yellow);
+  background-color: var(--dark-blue, #2C3E50);/* Un tono oscuro elegante */
+  color: #ffffff;
+  padding: 60px 0 20px 0;
+  margin-top: 40px;
+  font-family: sans-serif;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Configuración de la cuadrícula principal (3 columnas en PC) */
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr; /* La marca es más ancha que las columnas de links */
   gap: 40px;
   margin-bottom: 40px;
 }
 
+/* Sección de la Marca */
 .footer-brand h2 {
-  color: var(--primary-blue);
-  font-size: 24px;
+  font-size: 1.6rem;
+  margin-top: 0;
   margin-bottom: 15px;
+  color: #0070f3; /* Tu color principal para resaltar la marca */
+  font-weight: 700;
 }
 
-.ods-text {
-  margin-top: 10px;
-  font-size: 13px;
-  font-weight: bold;
-  color: var(--primary-blue);
-  background-color: var(--light-yellow);
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 6px;
+.footer-brand p {
+  color: #b3b3b3;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  max-width: 320px;
 }
 
+/* Columnas de Enlaces */
 .footer-links h3 {
-  color: var(--primary-blue);
+  font-size: 1.1rem;
+  margin-top: 0;
   margin-bottom: 20px;
-  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .footer-links ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
@@ -44,19 +59,62 @@
 }
 
 .footer-links a {
+  color: #b3b3b3;
   text-decoration: none;
-  color: var(--dark-blue);
-  transition: color 0.3s;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: var(--primary-blue);
+  color: #0070f3; /* Iluminación al pasar el mouse */
 }
 
+/* Barra inferior de derechos reservados */
 .footer-bottom {
-  text-align: center;
+  border-top: 1px solid #333333;
   padding-top: 20px;
-  border-top: 1px solid rgba(74, 144, 226, 0.2);
-  color: var(--gray-text);
-  font-size: 14px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #888888;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+
+/* ==========================================
+   2. RESPONSIVE: Tablets (Menos de 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* Cambia a 2 columnas */
+    gap: 30px;
+  }
+
+  /* Hace que la marca ocupe todo el ancho de la primera fila */
+  .footer-brand {
+    grid-column: span 2; 
+    margin-bottom: 10px;
+  }
+  
+  .footer-brand p {
+    max-width: 100%; /* Permite que el texto se estire si es necesario */
+  }
+}
+
+
+/* ==========================================
+   3. RESPONSIVE: Celulares (Menos de 480px)
+   ========================================== */
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Todo pasa a una sola columna vertical */
+    text-align: center; /* Centramos el texto para estética móvil */
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: span 1; /* Reseteamos el span para que se acople al flujo */
+  }
 }

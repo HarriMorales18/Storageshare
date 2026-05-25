@@ -219,12 +219,134 @@
   font-size: 0.95rem;
 }
 
-/* Responsivo básico */
+/* ==========================================================================
+   CONFIGURACIÓN RESPONSIVE GLOBAL - REGLAS PARA PANTALLAS PEQUEÑAS Y MEDIANAS
+   ========================================================================== */
+
+/* --- 1. TABLETS (Menos de 992px) --- */
 @media (max-width: 992px) {
+  .home-container {
+    padding-top: 20px;
+  }
+
+  /* La sección principal pasa de 2 columnas a 1 sola columna vertical */
   .hero {
     grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
   }
+
+  .hero-text {
+    text-align: center; /* Centramos el contenido principal para mejor estética */
+  }
+
+  .hero-title {
+    font-size: 2.8rem; /* Reducimos el tamaño para que no se desborde */
+  }
+
+  .hero-subtitle {
+    margin: 0 auto 30px auto; /* Centramos el párrafo */
+  }
+
+  .hero-actions {
+    justify-content: center; /* Centramos los botones principales */
+  }
+
+  .benefits-grid {
+    margin: 0 auto; /* Centramos la cuadrícula de beneficios */
+  }
+
+  /* ¿Cómo funciona?: Pasa de 3 columnas a 1 columna */
   .steps-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .step-card:hover {
+    transform: translateY(-5px); /* Un efecto de elevación más sutil en móviles */
+  }
+}
+
+
+/* --- 2. CELULARES (Menos de 576px) --- */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.2rem; /* Más pequeño aún para pantallas angostas */
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  /* Apilamos los botones de acción para que se puedan presionar mejor con el pulgar */
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero-actions button {
+    width: 100%; /* Ocupan todo el ancho disponible */
+    padding: 14px;
+  }
+
+  /* Los beneficios se dividen en una sola columna vertical */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .benefit-card {
+    padding: 12px;
+  }
+
+  /* Sección de vitrina / Tarjetas destacadas */
+  .hero-showcase {
+    padding: 15px;
+    border-width: 2px; /* Reducimos el grosor del borde amarillo para ganar espacio */
+  }
+
+  .showcase-header h3 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  /* La lista de tarjetas */
+  .spaces-list {
+    max-height: 450px; /* Reducimos un poco la altura de la lista en pantallas pequeñas */
+    gap: 15px;
+  }
+
+  /* El contenido interno de las tarjetas destacadas */
+  .space-info {
+    padding: 12px;
+  }
+
+  .space-header-info h4 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .space-price {
+    font-size: 1rem;
+  }
+
+  .btn-book {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Título de la sección "¿Cómo funciona?" */
+  .how-it-works {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .step-card {
+    padding: 20px;
   }
 }
