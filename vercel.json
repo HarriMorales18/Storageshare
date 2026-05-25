@@ -1,4 +1,7 @@
 {
+  "version": 2,
+  "public": true,
+  "outputDirectory": "dist/Storageshare",
   "rewrites": [
     {
       "source": "/(.*)",
