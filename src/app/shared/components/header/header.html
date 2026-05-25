@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="container header-content">
+    <div class="logo" routerLink="/">
+      <img src="/logo.png" alt="Logo de StorageShare" class="navbar-logo">
+      <h1>StorageShare</h1>
+    </div>
+    
+    <nav class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+      <a routerLink="/buscar" routerLinkActive="active">Buscar Espacio</a>
+      <a href="#como-funciona">¿Cómo funciona?</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn-secondary">Iniciar Sesión</button>
+      <button class="btn-primary">Publicar Espacio</button>
+    </div>
+  </div>
+</header>

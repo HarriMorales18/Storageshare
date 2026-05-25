@@ -1,0 +1,230 @@
+.home-container {
+  padding-top: 40px;
+}
+
+/* HERO SECTION */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--dark-blue);
+}
+
+.highlight-blue {
+  color: var(--primary-blue);
+  display: block;
+  margin-top: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--gray-text);
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--light-blue);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 400px;
+}
+
+.benefit-card {
+  background-color: var(--white);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid var(--light-blue);
+  color: var(--primary-blue);
+}
+
+/* SHOWCASE (Tarjetas de espacios) */
+.hero-showcase {
+  background-color: var(--white);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(74, 144, 226, 0.15);
+  border: 4px solid var(--light-yellow);
+}
+
+.showcase-header h3 {
+  margin-bottom: 20px;
+  color: var(--dark-blue);
+}
+
+.spaces-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 530px; /* Ajustamos un poco la altura máxima */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.space-card {
+  background-color: var(--bg-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  border: 1px solid var(--light-blue);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Evita que la tarjeta se aplaste verticalmente */
+}
+
+.space-card:hover {
+  transform: translateY(-5px);
+}
+
+.space-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.space-info {
+  padding: 15px;
+}
+
+.space-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  color: #D4AC0D; /* Un amarillo más fuerte para la estrella */
+  font-weight: bold;
+}
+
+.space-size {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.space-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.space-price {
+  font-weight: bold;
+  color: var(--primary-blue);
+  font-size: 1.1rem;
+}
+
+.btn-book {
+  background-color: var(--primary-yellow);
+  color: var(--dark-blue);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-book:hover {
+  background-color: #F4D03F;
+}
+
+/* HOW IT WORKS SECTION */
+.how-it-works {
+  background-color: var(--white);
+  padding: 80px 0;
+  border-top: 1px solid var(--light-blue);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.step-card {
+  background-color: var(--light-blue);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--light-yellow);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.step-card h3 {
+  margin-bottom: 10px;
+  color: var(--dark-blue);
+}
+
+.step-card p {
+  color: var(--gray-text);
+  font-size: 0.95rem;
+}
+
+/* Responsivo básico */
+@media (max-width: 992px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}

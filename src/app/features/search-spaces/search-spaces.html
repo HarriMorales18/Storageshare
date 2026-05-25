@@ -1,0 +1,29 @@
+<div class="container search-page">
+  <h2 class="page-title">Encuentra tu espacio ideal</h2>
+  
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Busca por ubicación o nombre (Ej: Bodega)..." class="search-input">
+    <button class="btn-primary">Buscar</button>
+  </div>
+
+  <div class="spaces-grid">
+    <div class="space-card" *ngFor="let space of filteredSpaces">
+      <img [src]="space.image" [alt]="space.name" class="space-img">
+      <div class="space-info">
+        <div class="space-header-info">
+          <h4>{{ space.name }}</h4>
+          <span class="rating">★ {{ space.rating }}</span>
+        </div>
+        <p class="space-size">{{ space.size }}</p>
+        <div class="space-footer">
+          <p class="space-price">{{ space.price }}</p>
+          <button class="btn-book" routerLink="/espacio/{{space.id}}">Ver Detalles</button>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngIf="filteredSpaces.length === 0" class="no-results">
+      <p>No se encontraron espacios con esa búsqueda.</p>
+    </div>
+  </div>
+</div>

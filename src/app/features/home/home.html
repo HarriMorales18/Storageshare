@@ -1,0 +1,70 @@
+<div class="home-container">
+  <section class="hero container">
+    <div class="hero-text">
+      <h2 class="hero-title">
+        Tu espacio cuando lo necesites, <br>
+        <span class="highlight-blue">tu ingreso cuando no lo uses.</span>
+      </h2>
+      <p class="hero-subtitle">
+        Conectamos personas que necesitan almacenar con dueños de espacios en Cartagena. Seguro, rápido y flexible.
+      </p>
+      
+      <div class="hero-actions">
+        <button class="btn-primary" routerLink="/buscar">Buscar espacio</button>
+        <button class="btn-outline">Publicar mi espacio</button>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card" *ngFor="let benefit of benefits">
+          {{ benefit }}
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-showcase">
+      <div class="showcase-header">
+        <h3>Espacios Destacados en Cartagena</h3>
+      </div>
+      
+      <div class="spaces-list">
+        <div class="space-card" *ngFor="let space of featuredSpaces">
+          <img [src]="space.image" [alt]="space.name" class="space-img">
+          <div class="space-info">
+            <div class="space-header-info">
+              <h4>{{ space.name }}</h4>
+              <span class="rating">★ {{ space.rating }}</span>
+            </div>
+            <p class="space-size">{{ space.size }}</p>
+            <div class="space-footer">
+              <p class="space-price">{{ space.price }}</p>
+              <button class="btn-book" routerLink="/espacio/{{space.id}}">Reservar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">¿Cómo funciona?</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Busca</h3>
+          <p>Encuentra el espacio ideal por ubicación y precio.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Reserva</h3>
+          <p>Selecciona fechas y confirma rápidamente.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Paga Seguro</h3>
+          <p>Transacciones protegidas en la plataforma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

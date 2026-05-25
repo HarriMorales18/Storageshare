@@ -1,0 +1,65 @@
+/* styles.css */
+:root {
+  /* Paleta de Colores: Azules y Amarillos Claros */
+  --primary-blue: #4A90E2;       /* Azul principal amigable */
+  --light-blue: #EBF4FA;         /* Fondo azul muy suave */
+  --dark-blue: #2C3E50;          /* Azul oscuro para textos legibles */
+  
+  --primary-yellow: #F9E79F;     /* Amarillo claro/pastel para destacar */
+  --light-yellow: #FEF9E7;       /* Fondo amarillo muy tenue */
+  
+  --white: #FFFFFF;
+  --gray-text: #7F8C8D;
+  --bg-color: #F8FBFC;           /* Color de fondo general de la app */
+}
+
+/* Reset y tipografía global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--dark-blue);
+  line-height: 1.6;
+}
+
+/* Clases utilitarias globales que usaremos mucho */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #357ABD;
+}
+
+.btn-secondary {
+  background-color: var(--primary-yellow);
+  color: var(--dark-blue);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #F4D03F;
+}

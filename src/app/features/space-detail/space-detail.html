@@ -1,0 +1,82 @@
+<div class="container detail-page" *ngIf="space">
+  <div class="back-link">
+    <a routerLink="/buscar">← Volver a la búsqueda</a>
+  </div>
+  
+  <div class="detail-grid">
+    <div class="detail-image-container">
+      <img [src]="space.image" [alt]="space.name" class="detail-image">
+    </div>
+    
+    <div class="detail-content">
+      <div class="detail-header">
+        <h2>{{ space.name }}</h2>
+        <span class="rating">★ {{ space.rating }}</span>
+      </div>
+      
+      <p class="detail-location">📍 Cartagena, Bolívar</p>
+      
+      <div class="detail-features">
+        <div class="feature">
+          <span class="feature-label">Tamaño:</span>
+          <span class="feature-value">{{ space.size }}</span>
+        </div>
+        <div class="feature">
+          <span class="feature-label">Acceso:</span>
+          <span class="feature-value">24/7</span>
+        </div>
+        <div class="feature">
+          <span class="feature-label">Seguridad:</span>
+          <span class="feature-value">Cámaras, Candado</span>
+        </div>
+      </div>
+      
+      <div class="detail-description">
+        <h3>Sobre este espacio</h3>
+        <p>Espacio seguro y limpio, ideal para almacenar cajas, muebles pequeños o inventario para emprendedores. Excelente iluminación, verificado por el equipo de StorageShare para cumplir con nuestra promesa de seguridad.</p>
+      </div>
+      
+      <div class="reservation-card">
+        <div class="price-section">
+          <span class="price-amount">{{ space.price }}</span>
+        </div>
+        
+        <div *ngIf="!isReserving && !reservationSuccess">
+          <button class="btn-primary w-100" (click)="startReservation()">Solicitar Reserva</button>
+          <p class="no-charge-text">No se te cobrará nada aún. Protegido por StorageShare.</p>
+        </div>
+
+        <div *ngIf="isReserving && !reservationSuccess" class="reservation-form">
+          <h4 class="form-title">Selecciona tus fechas</h4>
+          
+          <div class="form-group">
+            <label>Fecha de entrada:</label>
+            <input type="date" [(ngModel)]="startDate" class="date-input">
+          </div>
+          <div class="form-group">
+            <label>Fecha de salida:</label>
+            <input type="date" [(ngModel)]="endDate" class="date-input">
+          </div>
+          
+          <button class="btn-primary w-100" (click)="confirmReservation()" [disabled]="isProcessing">
+            {{ isProcessing ? 'Procesando pago...' : 'Confirmar Reserva' }}
+          </button>
+          <button class="btn-outline w-100 mt-10" (click)="resetReservation()" *ngIf="!isProcessing">Cancelar</button>
+        </div>
+
+        <div *ngIf="reservationSuccess" class="success-message">
+          <div class="success-icon">✓</div>
+          <h4>¡Reserva Solicitada!</h4>
+          <p>El dueño del espacio "{{ space.name }}" tiene 24 horas para confirmar tu solicitud.</p>
+          <button class="btn-secondary w-100 mt-20" (click)="resetReservation()">Hacer otra reserva</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container not-found" *ngIf="!space">
+  <h2>Espacio no encontrado</h2>
+  <p>Lo sentimos, no pudimos encontrar el espacio que buscas.</p>
+  <button class="btn-primary mt-20" routerLink="/buscar">Volver a buscar</button>
+</div>
